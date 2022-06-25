@@ -14,7 +14,6 @@
 # cat <(paste <(ls *R1_trimmed.fq.gz) <(ls *R1_trimmed.fq.gz | sed 's/.fq.gz//g') <(ls *R1_trimmed.fq.gz.fq.gz | sed 's/_.*//g')) > samples_align.txt
 
 # Once this is done, change NUMBER in line 4 above to be the result of `wc -l < samples_align.txt`
-S19-10678.merged.R1_trimmed.fq.gz
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 READ1=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f1)
 ID=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f3)
