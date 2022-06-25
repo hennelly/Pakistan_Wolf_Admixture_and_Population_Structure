@@ -14,12 +14,14 @@
 # cat <(paste <(ls *R1_trimmed.fq.gz) <(ls *R1_trimmed.fq.gz | sed 's/.fq.gz//g') <(ls *R1_trimmed.fq.gz.fq.gz | sed 's/_.*//g')) > samples_align.txt
 
 # Once this is done, change NUMBER in line 4 above to be the result of `wc -l < samples_align.txt`
-
+S19-10678.merged.R1_trimmed.fq.gz
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
-R1=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | awk -F"        " '{print $1}')
-ID=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | awk -F"        " '{print $2}')
-sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | awk -F"        " '{print $3}')
-
+READ1=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f1)
+ID=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f3)
+sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f3)
+REF=/home/hennelly/fastqfiles/DogRefwithY/genomes/canFam3_withY.fa
+OUTDIR=/home/hennelly/Chapter3/Alignment/bamfiles
+INDIR=/home/hennelly/Chapter3/Alignment/trimfastq
 echo ${sample}
 
 # load the bwa and samtools modules
@@ -30,6 +32,8 @@ module load samtools
 # Pipe to a bam file that excludes bad mapping scores
 # Pipe to a sorted bam for merging
 
-bwa mem -R "@RG\tID:${ID}\tSM:${ID}" /home/hennelly/fastqfiles/DogRefwithY/genomes/canFam3_withY.fa ${R1} | \
+bwa mem ${REF} ${INDIR}/${READ1} | \
 samtools view -q 10 -h -b - | \
-samtools sort -o /home/hennelly/Chapter3/Alignment/bamfiles/${sample}.bam -
+samtools sort -o ${OUTDIR}/${sample}.bam -
+
+
