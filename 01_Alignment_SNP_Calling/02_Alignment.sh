@@ -1,13 +1,13 @@
 #!/bin/bash -l
 #SBATCH --job-name=GBS_alignment
-#SBATCH --array=18
+#SBATCH --array=1-18
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=2-6:00:00
 #SBATCH --mem-per-cpu=8GB
 #SBATCH -p high
-#SBATCH -o /home/hennelly/projects/Chapter3/Alignment/slurmout/GBS_alignment_%A_%a.out
-#SBATCH -e /home/hennelly/projects/Chapter3/Alignment/slurmout/GBS_alignment_%A_%a.err
+#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/GBS_alignment_%A_%a.out
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/GBS_alignment_%A_%a.err
 #SBATCH --exclude=c10-96,c10-69,c11-76,c11-93
 
 # To create samples_align.txt, do:
