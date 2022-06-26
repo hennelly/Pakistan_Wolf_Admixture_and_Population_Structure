@@ -6,8 +6,8 @@
 #SBATCH --time 04:00:00
 #SBATCH --mem=2GB
 #SBATCH -p high
-#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_$A_%a.out
-#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_$A_%a.err
+#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_%A_%a.out
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_%A_%a.err
 
 BAM=$(sed "${SLURM_ARRAY_TASK_ID}q;d"  WGS_list3.txt | cut -f1)
 sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" WGS_list3.txt | cut -f2)
