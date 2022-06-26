@@ -8,8 +8,8 @@
 #SBATCH --mem=2GB
 #SBATCH -p bmm
 #SBATCH -A ctbrowngrp
-#SBATCH -o /home/cbquinn/wolf/slurmlogs/merge_bams_%a.out
-#SBATCH -e /home/cbquinn/wolf/slurmlogs/merge_bams_%a.err
+#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/merge_bams_%a.out
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/merge_bams_%a.err
 
 module load samtools
 
@@ -21,3 +21,12 @@ module load samtools
 
 samtools view GBS_merged.bam  | awk '{print $3"\t"$4"\t"$4+120}' > GBS_merged.bed
 
+# sort the new bedfile 
+
+sort -k1,1 -k2,2n GBS_merged.bed > GBS_merged_sorted.bed
+
+# merge the read positions in the sorted bed
+
+module load bedtools 
+
+bedtools merge -i GBS_merged_sorted.bed > GBS_merged_sorted_finished.bed
