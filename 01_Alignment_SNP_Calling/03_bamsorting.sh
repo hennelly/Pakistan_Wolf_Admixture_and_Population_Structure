@@ -18,15 +18,15 @@ sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f3)
 INDIR=/home/hennelly/Chapter3/Alignment/bamfiles
 echo ${sample}
 
-samtools sort ${INDIR}/${sample}.bam | \
-samtools view -o ${INDIR}/temp/${sample}_sorted.bam -
+#samtools sort ${INDIR}/${sample}.bam | \
+#samtools view -o ${INDIR}/temp/${sample}_sorted.bam -
 
 # mark duplicates 
 java -jar /home/hennelly/bin/picard.jar MarkDuplicates \
       I=${INDIR}/temp/${sample}_sorted.bam \
-      O=${INDIR}/sorted/{sample}_sorted_nodups.bam \
+      O=${INDIR}/sorted/${sample}_sorted_nodups.bam \
       M=${INDIR}/${sample}_metrics.txt
 
 # remove bad reads (duplicates, secondary alignments, mapQ<30)
-samtools view -hb -F 256 -q 30 ${INDIR}/sorted/${sample}_sorted_nodups_cleaned_temp.bam | \
+samtools view -hb -F 256 -q 30 ${INDIR}/sorted/${sample}_sorted_nodups.bam | \
 samtools view -hb -F 1024 > ${INDIR}/sorted/${sample}_sorted_nodups_cleaned.bam
