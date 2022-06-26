@@ -5,4 +5,5 @@
  - Alignment to the Dog Genome using bwa - [02_Alignment.sh](/01_Alignment_SNP_Calling/02_Alignment.sh)
  - Clean the bams files - [03_cleanbams.sh](/01_Alignment_SNP_Calling/03_cleanbams.sh)
      - this involved sorting the bam files, removing duplicates, and removing bad reads (duplicates, secondary alignments, mapQ<30)
- - Add readgroup headers and index 
+ - Add readgroup headers and index - [04_readgroup.sh](/01_Alignment_SNP_Calling/04_readgroup.sh)
+ - 
