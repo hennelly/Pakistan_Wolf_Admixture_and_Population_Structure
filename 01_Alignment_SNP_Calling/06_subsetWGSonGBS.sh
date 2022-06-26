@@ -1,23 +1,22 @@
 #!/bin/bash -l
 #SBATCH --job-name=subset
-#SBATCH --array=1-25
+#SBATCH --array=1-62%30
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --time 04:00:00
 #SBATCH --mem=2GB
-#SBATCH -p bmm
-#SBATCH -A ctbrowngrp
-#SBATCH -o /home/cbquinn/wolf/slurmlogs/subsetgbs_rescale_%a.out
-#SBATCH -e /home/cbquinn/wolf/slurmlogs/subsetgbs_rescale_%a.err
+#SBATCH -p high
+#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_$A_%a.out
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/subsetgbs_$A_%a.err
 
-WORKDIR=~/wolf2/6_gbs/bams_subset/historical/mapdam_recalibrated/
-SAMPLE=$(sed "${SLURM_ARRAY_TASK_ID}q;d"  ~/wolf2/2_align/historical/aln/deduped/histbamlist.txt | cut -f1)
-BAMIN=~/wolf2/2_align/historical/aln/mapdamage/results_${SAMPLE}/${SAMPLE}.rescaled.bam
-REF=/home/cbquinn/wolf2/tempref/canFam3_withY.fa
+BAM=$(sed "${SLURM_ARRAY_TASK_ID}q;d"  WGS_list3.txt | cut -f1)
+sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" WGS_list3.txt | cut -f2)
+OUTDIR=/home/hennelly/Chapter3/Alignment/bamfiles_WGSsubset
+BED=/home/hennelly/Chapter3/Alignment/bamfiles/final/GBS_merged_sorted_finished.bed
 
 # subset to GBS intervals and remove reads flagged as PCR duplicates
-
-cd $WORKDIR
 module load samtools
-samtools view -L ~/wolf2/6_gbs/bams_subset/gbsbed.bed -F 1024 -b $BAMIN > ${SAMPLE}.rescaled.gbs.bam
-samtools index ${SAMPLE}.rescaled.gbs.bam
+
+samtools view -L ${BED} -b ${BAM} > ${OUTDIR}/${sample}_subsetonGBS.bam
+
+samtools index ${OUTDIR}/${sample}_subsetonGBS.bam
