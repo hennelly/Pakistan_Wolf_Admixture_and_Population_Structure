@@ -18,8 +18,8 @@ sample=$(sed "${SLURM_ARRAY_TASK_ID}q;d" samples_align.txt | cut -f3)
 INDIR=/home/hennelly/Chapter3/Alignment/bamfiles
 echo ${sample}
 
-#samtools sort ${INDIR}/${sample}.bam | \
-#samtools view -o ${INDIR}/temp/${sample}_sorted.bam -
+samtools sort ${INDIR}/${sample}.bam | \
+samtools view -o ${INDIR}/temp/${sample}_sorted.bam -
 
 # mark duplicates 
 java -jar /home/hennelly/bin/picard.jar MarkDuplicates \
