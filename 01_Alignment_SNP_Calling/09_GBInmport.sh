@@ -1,13 +1,13 @@
 #!/bin/bash -l
 #SBATCH --job-name=gbdb
-#SBATCH --array=1-78%40
+#SBATCH --array=1-39
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --time 3-00:00:00
 #SBATCH --mem=20GB
 #SBATCH -p high
 #SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/GenomeDBImport_%A_%a.out
-#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmoutGenomeDBImport_%A_%a.err
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/GenomeDBImport_%A_%a.err
 
 module load R
 module load maven
@@ -26,4 +26,6 @@ gatk --java-options "-Xmx20g -Xms20g" \
     --batch-size 50 \
     -L ${CHR} \
     --sample-name-map ${SAMPLEMAP} \
-    --tmp-dir=${TEMPDIR} 
+    --tmp-dir ${TEMPDIR} 
+
+~/Chapter3/Alignment/scripts
