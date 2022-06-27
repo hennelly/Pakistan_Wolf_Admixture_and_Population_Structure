@@ -19,7 +19,6 @@ export PATH=$PATH:/home/hennelly/Chapter3/bin/gatk-4.2.6.0
 
 gatk VariantFiltration \
     -V gatk_${CHR}.vcf.gz \
-    -filter "DP < 1800" --filter-name "DP1800" \
     -filter "QD < 2.0" --filter-name "QD2" \
     -filter "SOR > 3.0" --filter-name "SOR3" \
     -filter "FS > 60.0" --filter-name "FS60" \
