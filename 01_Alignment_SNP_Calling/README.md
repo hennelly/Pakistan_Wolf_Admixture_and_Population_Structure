@@ -12,5 +12,5 @@
 - Second, I will then subset the WGS bam files to match the coordinates within the GBS files - [06_subsetWGSonGBS.sh](/01_Alignment_SNP_Calling/06_subsetWGSonGBS.sh)
 
 ## 3.0 SNP calling with GATK 
-- Convert bam files to GenotypeCaller files, which I did for the subsetted WGS - [07_HaplotypeCaller_WGS.sh](/01_Alignment_SNP_Calling/07_HaplotypeCaller_WGS.sh) and GBS samples 
+- Convert bam files to GenotypeCaller files, which I did for the subsetted WGS - [07_HaplotypeCaller_WGS.sh](/01_Alignment_SNP_Calling/07_HaplotypeCaller_WGS.sh) and GBS samples [08_HaplotypeCaller_GBSdata.sh](/01_Alignment_SNP_Calling/08_HaplotypeCaller_GBSdata.sh) 
 - etc
