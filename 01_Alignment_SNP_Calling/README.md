@@ -13,4 +13,5 @@
 
 ## 3.0 SNP calling with GATK 
 - Convert bam files to GenotypeCaller files, which I did for the subsetted WGS - [07_HaplotypeCaller_WGS.sh](/01_Alignment_SNP_Calling/07_HaplotypeCaller_WGS.sh) and GBS samples [08_HaplotypeCaller_GBSdata.sh](/01_Alignment_SNP_Calling/08_HaplotypeCaller_GBSdata.sh) 
-- etc
+- GenomeDBImport [09_GBInmport.sh](/01_Alignment_SNP_Calling/09_GBInmport.sh)
+
