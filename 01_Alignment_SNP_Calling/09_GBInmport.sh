@@ -28,4 +28,3 @@ gatk --java-options "-Xmx20g -Xms20g" \
     --sample-name-map ${SAMPLEMAP} \
     --tmp-dir ${TEMPDIR} 
 
-~/Chapter3/Alignment/scripts
