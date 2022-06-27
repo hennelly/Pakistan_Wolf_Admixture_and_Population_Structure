@@ -19,7 +19,7 @@ CHR=$(sed "${SLURM_ARRAY_TASK_ID}q;d" /home/hennelly/projects/GATK/scripts/chrom
 REF=/home/hennelly/fastqfiles/DogRefwithY/genomes/canFam3_withY.fa
 GENDB=/home/hennelly/Chapter3/Alignment/GenomeDBImport/
 OUTDIR=/home/hennelly/Chapter3/Alignment/GenotypeGATK/
-TEMPDIR=/home/hennelly/projects/GATK/scratch_GenotypeGATK/
+TEMPDIR=/home/hennelly/Chapter3/Alignment/scratch_GenotypeGATK/
 
 cd $GENDB
 gatk --java-options "-Xmx4g" GenotypeGVCFs \
