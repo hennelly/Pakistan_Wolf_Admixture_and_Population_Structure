@@ -10,4 +10,4 @@
 
 module load vcftools 
 
-vcftools --missing-indv  --vcf /home/hennelly/Chapter3/Alignment/GenotypeGATK/Autosomes_gatkfilter_noindels.vcf
+vcftools --missing-indv  --vcf /home/hennelly/Chapter3/FinalDataset/vcffiles/Autosomes_onlywolves_gatkfilter_noindels_minQ30_maxmissing0.9_mac3.recode.vcf
