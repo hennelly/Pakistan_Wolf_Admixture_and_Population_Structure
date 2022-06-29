@@ -10,8 +10,8 @@
 
 module load plink 
 
-FILE=/home/hennelly/Chapter3/FinalDataset/PCAdataset/Autosomes_onlywolves_gatkfilter_noindels_minQ30_maxmissing0.9_noastricks_adjusted.recode.vcf
-OUTFILE=/home/hennelly/Chapter3/FinalDataset/PCAdataset/Autosomes_onlywolves_gatkfilter_noindels_minQ30_maxmissing0.9_noastricks_adjusted_pruneLD0.5
+FILE=/home/hennelly/Chapter3/PCA/PCAdataset/Autosomes_onlywolves_gatkfilter_noindels_minQ30_maxmissing0.9_mac3_noastrick_adjusted.recode.vcf
+OUTFILE=/home/hennelly/Chapter3/PCA/PCAdataset/Autosomes_onlywolves_gatkfilter_noindels_minQ30_maxmissing0.9_mac3_noastrick_adjusted_pruneLD0.5
 
 plink --vcf ${FILE} \
 --const-fid 0 \
