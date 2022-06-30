@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH --job-name=depth
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --time 12:00:00
+#SBATCH --mem=2GB
+#SBATCH -p high
+#SBATCH -o /home/hennelly/Chapter3/Alignment/slurmout/depthpersample_%A_%a.out
+#SBATCH -e /home/hennelly/Chapter3/Alignment/slurmout/depthpersample_%A_%a.err
+#SBATCH --exclude=c10-96,c10-69,c11-76
+
+module load vcftools
+
+vcftools --vcf /home/hennelly/Chapter3/Alignment/GenotypeGATK/Autosomes_gatkfilter_noindels.vcf --depth --out /home/hennelly/Chapter3/Alignment/DepthperIndividual/
