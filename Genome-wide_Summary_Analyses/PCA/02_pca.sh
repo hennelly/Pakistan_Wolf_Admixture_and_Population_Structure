@@ -10,11 +10,10 @@
 
 module load plink
 
-FILE=/home/hennelly/Chapter3/FinalDataset/PCAdataset/Autosomes_onlyEurasiawolves_gatkfilter_noindels_minQ30_maxmissing1_mac3_minD4.recode.vcf
-OUTFILE=/home/hennelly/Chapter3/PCA/results/PCAresults_onlyEurasiagraywolf_minDP4
-plink --vcf ${FILE} \
+FILE=/home/hennelly/Chapter3/FinalDataset/PCAdataset/Autosomes_gatkfilter_noindels_minQ30_onlywolves_mac3_noastricks_adjusted_pruneLD0.5_geno0.1
+OUTFILE=/home/hennelly/Chapter3/PCA/results/PCAresults_newsamples
+plink --file ${FILE} \
 --pca var-wts \
---mind 0.1 \
 --const-fid 0 \
 --dog \
 --out ${OUTFILE}
