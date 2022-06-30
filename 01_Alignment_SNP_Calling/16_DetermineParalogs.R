@@ -36,11 +36,11 @@ summary(bins3)
                 ############# Step Five: Plotting ###############
                 #################################################
                 
-pdf("persitedepth_for_samples_June272022.pdf")
+pdf("persitedepth_for_samples_June302022.pdf")
 plot(bins3, main="Depth per Site for WGS samples", 
   ylab="amount of sites within depth bin "
   ,col="bisque")
    dev.off() 
         #########################################################
 
-scp -r hennelly@farm.cse.ucdavis.edu:/home/hennelly/Chapter3/Alignment/scripts/persitedepth_for_samples_June272022.pdf ~/Desktop
+scp -r hennelly@farm.cse.ucdavis.edu:/home/hennelly/Chapter3/Alignment/scripts/persitedepth_for_samples_June302022.pdf ~/Desktop
