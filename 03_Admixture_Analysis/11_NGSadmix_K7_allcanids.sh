@@ -8,4 +8,4 @@
 #SBATCH -o /home/hennelly/Chapter3/NGSadmix/slurmout/NGSadmix_allchr_K7_allcanids.out
 #SBATCH -e /home/hennelly/Chapter3/NGSadmix/slurmout/NGSadmix_allchr_K7_allcanids.err
 
-/home/sophiepq/bin/NGSadmix -likes ~/Chapter3/ANGSD/beagle_autosomes/angsd_autosomes_wolvesdogsothercanids_output.beagle.gz -K 7 -o ~/Chapter3/NGSadmix/results/NGSadmix_allchr_allcanids_o ~/Chapter3/NGSadmix/results/NGSadmix_allchr_allcanidsK7 -P 10
+/home/sophiepq/bin/NGSadmix -likes ~/Chapter3/ANGSD/beagle_autosomes/angsd_autosomes_wolvesdogsothercanids_output.beagle.gz -K 7 -o ~/Chapter3/NGSadmix/results/NGSadmix_allchr_allcanids_K7 -P 10
