@@ -1,7 +1,7 @@
 ###R
 
 #Read on cov file from PCAngsd output
-cov<-as.matrix(read.table("Autosomes_pca.cov"))
+cov<-as.matrix(read.table("Autosomes_pca_noShimshal.cov"))
 
 #Get eigenvalues and eigenvectors
 e<-eigen(cov)
