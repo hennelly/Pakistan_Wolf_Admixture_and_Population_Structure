@@ -14,4 +14,6 @@
 ## 3.0 Calculating genotype likelihoods using ANGSD 
  - Subset bam files to keep only the autosomal chromosomes - [07_keepautosomes.sh](/01_Alignment_and_ANGSD/07_keepautosomes.sh)
  - Next, I ran ANGSD on each chromosome using an array - [08_angsdbychr.sh](/01_Alignment_and_ANGSD/08_angsdbychr.sh)
+    - For ANGSD, I used a minimum mapping quality of 20, a minimum base quality of 20, required a minimum of 40 individuals per site, disabled trimming of any read ends, excluded reads with excessive mismatches (-C 50), and did UniqueOnly 1
+
  
