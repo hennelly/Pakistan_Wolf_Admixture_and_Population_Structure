@@ -1,0 +1,2 @@
+# Admixture analysis using NGSAdmix 
+
