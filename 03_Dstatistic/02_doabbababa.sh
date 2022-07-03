@@ -8,7 +8,7 @@
 #SBATCH -o /home/hennelly/Chapter3/Dstatistic/slurmout/abbababa.out
 #SBATCH -e /home/hennelly/Chapter3/Dstatistic/slurmout/abbababa.err
 
-ANC=/home/cbquinn/wolf2/tempref/jackal_mapped2canFam3_withY.fa.gz
+ANC=/home/hennelly/Chapter3/Dstatistic/ancestralfasta/dhole_mapped2canFam3_withY.fa.gz
 REF=/home/hennelly/fastqfiles/DogRefwithY/genomes/canFam3_withY.fa
 LIST=~/Chapter3/angsdPCA/scripts/bam_autosomes_noShimshal.txt
 OUT=~/Chapter3/Dstatistic/results/abba_July32022
